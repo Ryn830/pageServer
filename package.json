@@ -1,0 +1,18 @@
+{
+  "name": "pageServer.package",
+  "version": "1.0.0",
+  "description": "Static file server that delivers files from a Github repo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ryan Yee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.4",
+    "lodash": "^3.9.3",
+    "q": "^1.4.1",
+    "shelljs": "^0.5.1"
+  }
+}
