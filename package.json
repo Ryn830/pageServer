@@ -1,5 +1,5 @@
 {
-  "name": "pageServer.package",
+  "name": "pageServer",
   "version": "1.0.0",
   "description": "Static file server that delivers files from a Github repo",
   "main": "server.js",
