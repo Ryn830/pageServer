@@ -4,8 +4,7 @@
   "description": "Static file server that delivers files from a Github repo",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryan Yee",
   "license": "ISC",
@@ -14,5 +13,10 @@
     "lodash": "^3.9.3",
     "q": "^1.4.1",
     "shelljs": "^0.5.1"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.1"
   }
 }
