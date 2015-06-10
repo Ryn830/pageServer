@@ -42,7 +42,7 @@ module.exports = {
       });
     });
 
-    function initialize() {
+    function initialize () {
       shell.exec('rm -rf ' + config.repo + ' && git clone https://' + config.user + ':' + config.password + '@github.com/' + config.org + '/' + config.repo + '.git', function () {
         shell.cd(config.repo);
         console.log('The working directory after initialization: ', shell.pwd());
