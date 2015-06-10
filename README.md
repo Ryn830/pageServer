@@ -5,7 +5,7 @@
 
 ```js
   var pageServer = require('pageServer');
-  pageServer(require('./config.json'), process.env['PORT'] || 3000);
+  pageServer.serve(require('./config.json'), process.env['PORT'] || 3000);
 ```
 
 ### Example config.json
