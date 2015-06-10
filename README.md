@@ -1,6 +1,10 @@
 # pageServer
 > A static file server for Github files.
 
+### Installation
+
+`npm install git+https://github.com/Ryn830/pageServer.git`
+
 ### Usage
 
 ```js
