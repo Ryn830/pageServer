@@ -23,4 +23,4 @@
 
 * GET '/*' - Performs a `git show` on the file designated at `/BRANCH:FILE`.
   - ex. `/master:Home.md`
-* POST '/update' - Performs a `git pull` on the repository listed in `config.json`
+* POST '/update' - Performs a `git pull` on the repository referenced in exports.
