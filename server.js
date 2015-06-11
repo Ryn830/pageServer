@@ -5,7 +5,7 @@ var server = require('express')();
 
 module.exports = {
 
-  serve: function (config, port) {
+  serve: function (port) {
     server.use(function (error, request, response, next) {
       if(!error) return next();
       console.error('Error: ', error.stack);
@@ -37,14 +37,18 @@ module.exports = {
     });
 
     server.post('/update', function (request, response) {
-      shell.exec('git pull --rebase origin test', function () {
+      shell.exec('git pull --rebase origin master', function () {
         response.status(200).end("Success!\n");
       });
     });
 
     function initialize () {
-      shell.exec('rm -rf ' + config.repo + ' && git clone https://' + config.user + ':' + config.password + '@github.com/' + config.org + '/' + config.repo + '.git', function () {
-        shell.cd(config.repo);
+      var user = shell.exec('echo $GITHUB_USERNAME', { silent: true }).output.slice(0, -1);
+      var pass = shell.exec('echo $GITHUB_PASSWORD', { silent: true }).output.slice(0, -1);
+      var repo = shell.exec('echo $GITHUB_REPO', { silent: true }).output.slice(0, -1);
+      var org = shell.exec('echo $GITHUB_ORGANIZATION', { silent: true }).output.slice(0, -1);
+      shell.exec('rm -rf ' + repo + ' && git clone https://' + user + ':' + pass + '@github.com/' + org + '/' + repo + '.git', function () {
+        shell.cd(repo);
         console.log('The working directory after initialization: ', shell.pwd());
       });
     }

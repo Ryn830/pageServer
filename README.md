@@ -7,20 +7,16 @@
 
 ### Usage
 
+1. Export environment variables:
+  - `export GITHUB_USERNAME=FILL_ME_IN`
+  - `export GITHUB_PASSWORD=FILL_ME_IN`
+  - `export GITHUB_REPO=FILL_ME_IN`
+  - `export GITHUB_ORGANIZATION=FILL_ME_IN`
+
+2. Require pageServer in server.js file
 ```js
   var pageServer = require('pageServer');
-  pageServer.serve(require('./config.json'), process.env['PORT'] || 3000);
-```
-
-### Example config.json
-
-```json
-  {
-    "user": "FILL_ME_IN",
-    "password": "FILL_ME_IN",
-    "org": "FILL_ME_IN",
-    "repo": "FILL_ME_IN"
-  }
+  pageServer.serve(process.env['PORT'] || 3000);
 ```
 
 ### Routes
